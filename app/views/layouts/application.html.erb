@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Zero</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Zero</title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <section class="heading container">
+      <h1>Zero Division</h1>
+    </section>
 
-<%= yield %>
+    <section class="notices container">
+      <% flash.each do |type, message| %>
+        <p class="notice <%= type%>"><%= message %></p>
+      <% end %>
+    </section>
 
-</body>
+    <main class="container">
+      <%= yield %>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,44 @@
+<h1><%= @question.title %></h1>
+
+<p class="question-body"><%= @question.body %></p>
+
+<h2>Answers</h2>
+
+<% if @question.answers.empty? %>
+  <p>No one has answered this question yet.</p>
+<% else %>
+  <ul class="answers">
+    <% @question.answers.each do |answer| %>
+      <% if answer.persisted? %>
+        <li><%= answer.body %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [@question, @answer] do |f| %>
+  <fieldset>
+    <legend>Leave your answer</legend>
+
+    <% if @answer.errors.any? %>
+      <ul class="errors">
+        <% @answer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :body, class: "hidden" %>
+      <%= f.text_area :body, rows: 10 %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class: "button" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<div class="actions">
+  <%= link_to "Back to Question List", questions_path %>
+</div>

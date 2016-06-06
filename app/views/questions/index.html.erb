@@ -1,0 +1,14 @@
+<h1>Recent Questions</h1>
+
+<ul class="questions">
+  <% @questions.each do |question| %>
+    <li class="question">
+      <span class="title"><%= link_to question.title, question_path(question) %></span>
+      <span class="created-at">asked <%= distance_of_time_in_words(Time.now, question.created_at) %> ago</span>
+    </li>
+  <% end %>
+</ul>
+
+<div class="actions">
+  <%= link_to "Ask Question", new_question_path, class: "button" %>
+</div>

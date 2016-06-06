@@ -1,0 +1,29 @@
+<h1>Ask Question</h1>
+
+<%= form_for @question do |f| %>
+  <% if @question.errors.any? %>
+    <ul class="errors">
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 10 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit", class: "button" %>
+  </div>
+<% end %>
+
+<div class="actions">
+  <%= link_to "Back to Questions", questions_path %>
+</div>

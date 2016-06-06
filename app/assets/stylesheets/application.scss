@@ -1,0 +1,76 @@
+//= require normalize
+//= require_tree .
+//= require_self
+
+$border-color: #ccc;
+$light-bg-color: #eee;
+$light-font-color: #777;
+$error-color: #ff0000;
+
+input[type="text"], textarea {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.heading h1 {
+  font-size: 2em;
+  border-bottom: 1px solid $border-color;
+}
+
+main h1 {
+  font-size: 1.8em;
+}
+
+.button {
+  padding: 13px 25px 10px 25px;
+  border: 1px solid $border-color;
+  color: #333;
+  background-color: $light-bg-color;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.field {
+  padding: 10px 0;
+}
+
+.actions {
+  padding: 10px 0;
+}
+
+.errors {
+  color: $error-color;
+  list-style: none;
+  padding: 0;
+}
+
+.notice {
+  border: 1px solid $border-color;
+  padding: 15px 10px;
+  background-color: $light-bg-color;
+}
+
+.questions {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.question {
+  padding: 8px 2px;
+}
+
+.question .created-at {
+  color: $light-font-color;
+}
