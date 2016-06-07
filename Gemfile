@@ -15,3 +15,8 @@ gem 'uglifier', '~> 3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.1'
+
+group :production do
+  # Log to STDOUT and serve static assets
+  gem 'rails_12factor', '~> 0.0'
+end
