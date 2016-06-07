@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Environment file may contain sensitive credentials
+/.env*
+!/.env.sample

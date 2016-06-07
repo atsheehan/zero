@@ -19,6 +19,9 @@ gem 'jquery-rails', '~> 4.1'
 # Webserver
 gem 'puma', '~> 3.4'
 
+# Read secrets into environment from file
+gem 'dotenv-rails', '~> 2.1'
+
 group :production do
   # Log to STDOUT and serve static assets
   gem 'rails_12factor', '~> 0.0'
